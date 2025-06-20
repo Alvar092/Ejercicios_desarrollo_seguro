@@ -32,5 +32,13 @@ final class DesarrolloSegur0Tests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testCharactersNetwork() async throws {
+        let network = NetworkCharacters()
+        
+        let characters = await network.getCharacters(filter: "Morty")
+        
+        XCTAssert(characters.count == 68)
+    }
 
 }
